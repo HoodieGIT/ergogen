@@ -1,0 +1,77 @@
+points:
+  key:
+    padding:  cy
+    tags:
+      1u: true
+    footprints:
+      choc: 
+        type: choc
+        anchor: 
+          rotate: 180
+        nets:
+          from: =column_net
+          to: GND
+        params:
+          keycaps: true
+          reverse: true
+  zones:
+    main:
+      rows:
+        bottom:
+        home:
+        top:
+      columns:
+        pinkie:
+          spread: cx
+        ring:
+          stagger: 10
+          spread: cx
+        middle:
+          stagger: 5
+          spread: cx
+        index:
+          spread: cx
+        far:
+          stagger: -5
+          spread: cx
+    thumb:
+      anchor:
+        ref:  main_index_bottom
+        shift:  [0,-25]
+      rows:
+      columns:
+        inner:
+        middle:
+          rotate: -7
+          spread: cx+2
+          stagger: -1.25
+        outer:
+          rotate: -8
+          spread: cx+2
+          stagger:  -1.25
+outlines:
+ exports:
+  raw:
+    - type: keys
+      side: left
+      size: [1cx - 0.5, 1cx -0.5]
+    - type: rectangle
+      size: [40,60]
+      anchor:
+       ref: main_far_bottom
+       shift: [-5,-20]
+       
+      
+
+  cutout:
+    - type: outline
+      name: raw
+      fillet: 2
+  keycap_outlines:
+      - type: keys
+        side: left
+        size: [1cx - 0.5, 1cy - 0.5] # Choc keycaps are 17.5 x 16.5
+        bound: false    
+        tags: [1u]   
+  preview:
+        [keycap_outlines]
